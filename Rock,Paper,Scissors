@@ -1,0 +1,35 @@
+import random
+
+print('=============================')
+print('Welcome to Rock Paper Scissors')
+print('=============================')
+print()
+
+choices = [" Rock", "Paper", "Scissors"]
+
+computer = random.choice(choices).upper()
+#print(computer)
+
+player = False
+
+while player == False:
+  #
+  player = input('Please enter Rock, Paper, or Scissors! \n').upper()
+
+  if player == computer:
+    print('Tie!')
+  elif player == "Rock".upper():
+      if computer == "Scissors".upper():
+        print('You win!, rock beats scissors')
+      else:
+        print('You lose!, paper covers rock')
+  elif player == "Scissors".upper():
+      if computer == "Scissors".upper():
+        print('You win!, scissors cuts paper')
+      else:
+        print('You lose!, rock smashes scissors')
+  elif player == "Paper".upper():
+      if computer == "Scissors".upper():
+        print('You win!, paper covers rock')
+      else:
+        print('You lose!, scissors cuts paper')
