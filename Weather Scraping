@@ -1,0 +1,11 @@
+from bs4 import BeautifulSoup
+import requests
+url ='http://www.fox23.com/weather'
+r = requests.get(url)
+r_html = r.text
+
+soup = BeautifulSoup(r_html,"lxml")
+print('Rain  Date Weather      High      Low')
+
+for headline in soup.find_all(class_="forecast"):
+  print(headline.text.replace('\n'," ").strip())
