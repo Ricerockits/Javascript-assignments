@@ -1,0 +1,14 @@
+function owassoRams(n){
+  lib = []
+  for (x = 1; x <= n; x++)
+  {
+     
+     if (x % 3 === 0 && x % 5 === 0) {lib.push("OwassoRams");}
+     else if (x % 3 === 0) {lib.push("Owasso");}
+     else if (x % 5 === 0){lib.push("Rams");}
+     else {lib.push(x);}
+  }
+  return lib;
+}
+var output = owassoRams(15);
+console.log(output);
