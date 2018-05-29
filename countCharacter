@@ -1,0 +1,12 @@
+function countCharacter(str, char) {
+  count = 0;
+  arr = str.split('');
+  for (x = 0; x<=arr.length; x++){
+    if (arr[x] == char){
+      count += 1;
+    }
+  }
+  return(count);
+}
+var output = countCharacter('I am a hacker', 'a');
+console.log(output);
