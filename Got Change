@@ -1,0 +1,37 @@
+#Determine cost and if it's enough
+while True:
+  cost = float(input("Total Cost?"))
+  print()
+  amount = float(input("Money given?"))
+  print()
+  change = amount - cost
+  payback = float(round(change, 2))
+  
+  if amount > cost:
+    print("Change:",payback)
+  if amount < cost:
+    print("Amount given is not equal to or greater than cost.")
+    break
+  
+  #Determine how much change should be given back
+  if amount == cost:
+    print("No change will be given")
+    break
+  if change > 1:
+    dollars = change//1
+    quarters = (change - dollars)//.25
+    #print(quarters)
+    dimes = (change - dollars - quarters*(.25))//.10
+    nickels = (change - dollars - quarters*.25 - dimes*.1)//.05
+    pennies = ((change - dollars - quarters*.25 - dimes*.1 - nickels*.05)//.01) + 1
+  if amount < 1:
+    quarters = change//.25
+    dimes = (change - quarters*.25)//.10
+    nickels = (change - quarters*.25 - dimes*.1)//.05
+    pennies = ((change - dollars - quarters*.25 - dimes*.1 - nickels*.05)//.01) + 1
+
+  print(dollars,"dollar(s)")
+  print(round(quarters, 2),'quarter(s)')
+  print(round(dimes, 2),'dime(s)')
+  print(round(nickels, 2),'nickel(s)')
+  print(round(pennies, 2),"pennie(s)")
