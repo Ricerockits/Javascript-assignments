@@ -1,0 +1,23 @@
+n_1 = 0
+b = 0
+a = str(input("Input your list of numbers:")).split()
+a = [int(x) for x in a]
+
+a = sorted(a)
+#mean
+for int in a:
+  b += int
+for int in a:
+  n_1 += 1
+mean = b/n_1
+print("Mean: ",round(mean,2))
+#median
+mid = len(a) //2 
+if len(a)%2 == 0:
+  print("Median:",a[mid]-1, a[mid])
+else:
+  print("Median:", a[mid])
+
+#mode
+q = max(set(a), key=a.count)
+print("Mode:",q)
